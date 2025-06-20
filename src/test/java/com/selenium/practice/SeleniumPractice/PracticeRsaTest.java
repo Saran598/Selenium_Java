@@ -8,13 +8,14 @@ import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class PracticeRsaTest {
 
-	private WebDriver driver;
+	WebDriver driver;
 
 	@BeforeMethod // This method will run before each @Test method
 	public void SetUp() {
@@ -37,18 +38,29 @@ public class PracticeRsaTest {
 		System.out.println(rbc.isSelected());
 	}
 
-	@Test (enabled=true)
+	@Test(enabled = true)
 	public void AutoSuggestionExample() throws Exception {
-		
+
 		WebElement as = driver.findElement(By.xpath("//legend[normalize-space()='Suggession Class Example']"));
 		System.out.println(as.getText());
 		WebElement autoCompleteBox = driver.findElement(By.cssSelector("#autocomplete"));
 		autoCompleteBox.sendKeys("america");
 		autoCompleteBox.sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(2000);
-		  Rectangle R = autoCompleteBox.getRect();
-		  System.out.println(R);
+		Rectangle R = autoCompleteBox.getRect();
+		System.out.println(R);
+	}
 
+	@Test
+	public void DropdownExample() throws Exception {
+
+	WebElement Ddheader =	driver.findElement(By.xpath("//legend[normalize-space()='Dropdown Example']"));
+	System.out.println(Ddheader.getText());
+	WebElement Dd = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
+	Select sel = new Select(Dd); 
+	sel.selectByVisibleText("Option2");
+	Thread.sleep(2000);
+	System.out.println(Dd.getText());
 	}
 
 	@AfterMethod // This method will run after each @Test method
