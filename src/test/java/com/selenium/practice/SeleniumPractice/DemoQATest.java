@@ -35,9 +35,9 @@ public class DemoQATest {
 		WebElement passwordBox = driver.findElement(By.xpath("//input[@id='exampleInputPassword1']"));
 		passwordBox.sendKeys("krishna@345"); 
 		Thread.sleep(2000);
-		Select sl = new Select(driver.findElement(By.xpath("//select[@id='exampleFormControlSelect1']")));
-		Thread.sleep(2000);
-		sl.selectByValue("Female");
+		Select sl = new Select(driver.findElement(By.xpath("//select[@class='form-control']")));
+		Thread.sleep(3000);
+		sl.selectByVisibleText("Female");
 		System.out.println("Selected" +sl+ "from the Gender dropdown"); 
 		
 
