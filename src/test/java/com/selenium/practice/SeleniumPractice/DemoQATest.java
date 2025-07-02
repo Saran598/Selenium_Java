@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Test (enabled=false)
 public class DemoQATest {
 
 	private WebDriver driver;
@@ -25,7 +26,7 @@ public class DemoQATest {
 		System.out.println(TitleName);
 	}
 
-	@Test
+	@Test (enabled=false)
 	public void InputForm() throws Exception {
 
 		WebElement nameBox = driver.findElement(By.xpath("//div[@class='form-group']//input[@name='name']"));
@@ -40,7 +41,12 @@ public class DemoQATest {
 		sl.selectByVisibleText("Female");
 		System.out.println("Selected" +sl+ "from the Gender dropdown"); 
 		
-
+	}
+	
+	@Test
+	public void ProductSelection() {
+		driver.findElement(By.xpath("//a[normalize-space()='Shop']")).click();
+		
 	}
 
 	@AfterMethod // This method will run after each @Test method

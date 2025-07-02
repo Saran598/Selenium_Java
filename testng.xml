@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.selenium.practice.SeleniumPractice.PracticeRsaTest"/>
+      <class name="com.selenium.practice.SeleniumPractice.PracticeRsaTest2"/>
       <class name="com.selenium.practice.SeleniumPractice.DemoQATest"/>
     </classes>
   </test> <!-- Test -->

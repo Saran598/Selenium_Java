@@ -3,11 +3,16 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="com.selenium.practice.SeleniumPractice.PracticeRsaTest2">
+        <methods>
+          <include name="SimpleAlert"/>
+          <include name="tearDown"/>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.selenium.practice.SeleniumPractice.PracticeRsaTest2 -->
       <class name="com.selenium.practice.SeleniumPractice.DemoQATest">
         <methods>
-          <include name="InputForm"/>
-          <include name="SetUp"/>
-          <include name="tearDown"/>
+          <include name="ProductSelection"/>
         </methods>
       </class> <!-- com.selenium.practice.SeleniumPractice.DemoQATest -->
     </classes>

@@ -53,14 +53,13 @@ public class PracticeRsaTest {
 
 	@Test
 	public void DropdownExample() throws Exception {
-
-	WebElement Ddheader =	driver.findElement(By.xpath("//legend[normalize-space()='Dropdown Example']"));
-	System.out.println(Ddheader.getText());
-	WebElement Dd = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
-	Select sel = new Select(Dd); 
-	sel.selectByVisibleText("Option2");
-	Thread.sleep(2000);
-	System.out.println(Dd.getText());
+		WebElement Ddheader = driver.findElement(By.xpath("//legend[normalize-space()='Dropdown Example']"));
+		System.out.println(Ddheader.getText());
+		WebElement Dd = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
+		Select sel = new Select(Dd);
+		sel.selectByVisibleText("Option2");
+		Thread.sleep(2000);
+		System.out.println(Dd.getText());
 	}
 
 	@AfterMethod // This method will run after each @Test method
